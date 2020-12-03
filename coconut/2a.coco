@@ -1,0 +1,6 @@
+parse = def -> [r, c, pw] = _.split(); tuple(map(int, r.split('-'))), c[0], pw
+
+check = (rng, c, pw) -> (n := pw.count(c)) >= rng[0] and n <= rng[1]
+
+with open('2.txt') as f:
+  print(sum(starmap(int ∘ check, map(parse, f))))
